@@ -4,6 +4,7 @@ import javax.annotation.MatchesPattern;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,12 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(indexName = "semester_index")
+@Component
 public class Semester {
 	
 	@Id
 	@MatchesPattern(value = "[12]")
-    private String semester_Id;
+    private Integer semester_Id;
 	
 	private Integer english_marks;
 	
